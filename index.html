@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Mama 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
+body{background:linear-gradient(to bottom,#000,#0a0a0a);color:white;overflow-x:hidden}
+
+/* Floating Hearts */
+.heart{
+position:fixed;
+bottom:-10px;
+font-size:18px;
+color:white;
+animation:floatUp linear infinite;
+opacity:0.7;
+}
+@keyframes floatUp{
+0%{transform:translateY(0);opacity:0}
+50%{opacity:1}
+100%{transform:translateY(-100vh);opacity:0}
+}
+
+/* Sections */
+.section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px 20px;
+}
+
+h1{font-size:30px;margin-bottom:15px}
+p{max-width:700px;line-height:1.7;font-size:18px}
+
+/* Button */
+.btn{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+background:white;
+color:black;
+font-weight:600;
+border-radius:25px;
+cursor:pointer;
+transition:0.3s;
+}
+.btn:hover{transform:scale(1.1)}
+
+/* Slideshow */
+.slideshow{
+width:90%;max-width:350px;height:450px;
+border-radius:20px;overflow:hidden;margin-top:20px;
+box-shadow:0 0 20px rgba(255,255,255,0.3);
+}
+.slideshow img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:opacity 0.8s ease;
+opacity:1;
+}
+
+/* Popup */
+.popup{
+position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.95);
+display:none;justify-content:center;align-items:center;
+flex-direction:column;z-index:999;
+}
+.popup button{
+margin:10px;padding:10px 20px;border:none;
+border-radius:20px;font-weight:bold;cursor:pointer;
+}
+.yes{background:white;color:black}
+.no{background:gray;color:white}
+
+/* SECRET LOCK SCREEN */
+.lock{
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:1000;
+}
+.lock input{
+padding:12px;border-radius:20px;border:none;text-align:center;
+margin-top:10px;
+}
+
+
+
+/* Aesthetic Letter Box */
+.aesthetic-box{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:20px;
+padding:40px 30px;
+max-width:500px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+transition:0.4s;
+}
+
+.aesthetic-box:hover{
+transform:translateY(-5px) scale(1.01);
+box-shadow:0 15px 40px rgba(255,255,255,0.15);
+}
+
+/* Hidden letter */
+.letter-paper{
+display:none;
+margin-top:25px;
+background:#fffef8;
+color:#2b2b2b;
+padding:35px 25px;
+border-radius:10px;
+font-family:"Times New Roman",serif;
+line-height:1.8;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(15px)}
+to{opacity:1; transform:translateY(0)}
+}
+
+/* Glow Love Text */
+.glow{
+font-size:34px;
+letter-spacing:2px;
+color:#fff;
+text-shadow:
+0 0 10px rgba(255,255,255,0.9),
+0 0 20px rgba(255,255,255,0.7),
+0 0 40px rgba(255,255,255,0.5);
+animation:glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse{
+from{transform:scale(1)}
+to{transform:scale(1.05)}
+}
+
+.section{
+min-height:100vh;
+padding:20px 15px;
+}
+
+
+@keyframes floatUp{
+0%{transform:translateY(0) scale(0.8);opacity:0}
+20%{opacity:1}
+100%{transform:translateY(-110vh) scale(1.1);opacity:0}
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- SECRET FIRST LOCK -->
+<div class="lock" id="lock">
+<h1>Enter Our Secret Password 🤍</h1>
+<h2>Unaku rombo pudicha oru word tha na password ahh set panni iruken...!!</h2>
+<input type="password" id="pass" placeholder="Password">
+<button class="btn" onclick="unlock()">Open Love</button>
+<p id="wrong" style="margin-top:10px"></p>
+</div>
+
+<!-- Floating Hearts -->
+<script>
+for(let i=0;i<35;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="🤍";
+h.style.left=Math.random()*100+"%";
+h.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(h);
+}
+</script>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<!-- HERO -->
+<div class="section">
+<h1>Happy Valentine's Day Mama 🤍</h1>
+<p> oii mama <br>Nan unoda ammu...unaku na evalo special nu enku therium.. 💍..Edha website unakaga nan kasta pattu ready panna..neraiya efforts pottu iruken..fulla paaru..</p>
+<button class="btn" onclick="document.getElementById('story').scrollIntoView()">Open Love Story</button>
+</div>
+
+<!-- STORY -->
+<div class="section" id="story">
+<h1>Our Love Story 🤍</h1>
+<p>
+2020 la dhaan namma story start aayiduchu…  
+Strangers → Friends → Love → Forever 🤍 Namma meet panna oru oru naalum special than..  
+Daily pesama irundha incomplete ahh feel panuven…Na unaku yedhum panula nu nenaikaadha...unakaga neraiya pannanum nu asa...kandipa ne asa patadhula panuven...nee asa paduradhu la ne nenaikaadha apo unaku na tharuven...
+Fights irukum… aana love adhuku mela 🤍  
+Nee siricha world bright…un kuda irudha na happy ahh feel panuven ..epadi soldradhunu theriyama oru website ahh ready panni en love unkitta share pandren...oru husband and wife ahh namba irudhu irukom..yepovum edha love discontinue agadhu...kandipa namakunu oru nall varum adhu varaikum wait pannuvom..Apuram nee sonna na unaku kedachaa varam nu...adhu enku theriyala but ne enku kedacha varam than..neraiya sanda poduvom,neraiya love pannuvom..edha life namalodadhu mama.. I LOVE YOU SO MUCH MAMA...Unakaga nan epovum unkuda irupen..Na yedhachi unku kastam kuduthu irudha rombo sorry mama..
+Forever naan un Ammu 🤍  
+</p>
+</div>
+
+<!-- SLIDESHOW -->
+<div class="section">
+<h1>Our Memories 📸</h1>
+<div class="slideshow">
+<img id="slide" src="IMG-20240413-WA0561.jpg">
+</div>
+<p>Every photo = One beautiful memory 🤍</p>
+</div>
+
+
+
+<!-- AESTHETIC LOVE LETTER -->
+<div class="section" id="loveletter">
+
+<h1>For You Mama 🤍</h1>
+
+<div class="aesthetic-box">
+
+<p style="font-size:18px;opacity:0.9">
+Na unakaga asaiya write panni iruken… 🤍  
+Open pannina dhaan padikka mudiyum 😌
+</p>
+
+<button class="btn" onclick="openLetter()">Open Love Letter 💌</button>
+
+<!-- Hidden Paper Letter -->
+<div class="letter-paper" id="letter">
+
+<p>
+Mama… 🤍<br><br>
+
+Unna first time pesina naal irundhu… en life full change aayiduchu.  
+Nee enaku lover mattum illa… nee en best friend, en happiness, en peace.  
+
+Daily un kuda pesina dhan na complete ahh feel panuven…  
+Un siripu enaku strength… un love enaku life.  
+
+Namakulla sanda varum… aana adhuvum namma love ahh strong aakum.  
+Un kuda iruka every moment enaku treasure 🤍  
+
+Future la enna nadandhalum…  
+<b>I will always stand with you, love you, care for you.</b>  
+
+Nee dhan en forever… nee dhan en home 💍  
+
+<br><br>
+Happy Valentine’s Day Mama 🤍  
+<br>
+— Un Ammu 💕  
+</p>
+
+</div>
+</div>
+</div>
+
+<!-- FINAL CINEMATIC ENDING -->
+<div class="section" id="final">
+
+<h1 class="glow">I WILL ALWAYS LOVE YOU 🤍</h1>
+<h2 style="margin-top:15px;opacity:0.8">Forever & Ever — Un Ammu 💕</h2>
+<h2>Edha touch panitey iru oru magic nadakum</h2>
+<button class="btn" onclick="touchHeart()">Touch My Heart 💖</button>
+
+
+</div>
+
+
+
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<h1>Mama… Nee enakaga yepovum enkudavey irupiya? 🤍</h1>
+<h2>No..sonina nadakaradhey vera...no matum solli paareyyy</h2>
+<button class="yes" onclick="yesLove()">YES 💖</button>
+<button class="no" onclick="moveNo(this)">NO 😜</button>
+</div>
+
+
+<script>
+
+/* Unlock */
+function unlock(){
+let p=document.getElementById("pass").value.toLowerCase();
+if(p==="ammu"){
+document.getElementById("lock").style.display="none";
+document.getElementById("music").play();
+}else{
+document.getElementById("wrong").innerHTML="Wrong password 😜";
+}
+}
+
+/* Slideshow — 2 sec + smooth fade */
+let imgs=[
+"photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg","photo5.jpg"
+];
+let i=0;
+let slide=document.getElementById("slide");
+
+setInterval(()=>{
+slide.style.opacity=0;
+setTimeout(()=>{
+i=(i+1)%imgs.length;
+slide.src=imgs[i];
+slide.style.opacity=1;
+},400);
+},2000);
+
+/* Popup */
+function openPopup(){document.getElementById("popup").style.display="flex"}
+function yesLove(){document.querySelector(".popup h1").innerHTML="Yayyy 🤍 Forever Together 💍"}
+function moveNo(b){b.style.position="absolute";b.style.left=Math.random()*80+"%";b.style.top=Math.random()*80+"%"}
+
+
+
+function unlock(){
+let p=document.getElementById("pass").value.toLowerCase();
+if(p==="ammu"){
+document.getElementById("lock").style.display="none";
+document.getElementById("music").play();
+
+/* 👉 Password correct na popup open aganum */
+setTimeout(()=>{
+openPopup();
+},800);   // konjam delay nice ahh irukum
+
+}else{
+document.getElementById("wrong").innerHTML="Wrong password 😜";
+}
+}
+function yesLove(){
+
+/* Message change */
+document.querySelector(".popup h1").innerHTML="Yayyy 🤍 Forever Together 💍";
+
+/* Popup close + go to Hero section */
+setTimeout(()=>{
+document.getElementById("popup").style.display="none";
+
+/* Direct first section ku scroll */
+document.querySelector(".section").scrollIntoView({behavior:"smooth"});
+
+},1200);
+}
+
+function openLetter(){
+document.getElementById("letter").style.display="block";
+}
+
+function touchHeart(){
+
+/* Flying text burst */
+for(let i=0;i<25;i++){
+
+let t=document.createElement("div");
+t.innerHTML="I LOVE YOU MAMA 🤍";
+
+t.style.position="fixed";
+t.style.left=Math.random()*100+"%";
+t.style.top="100%";
+t.style.fontSize="16px";
+t.style.fontWeight="bold";
+t.style.color="#ff4d6d";
+t.style.whiteSpace="nowrap";
+t.style.animation="floatUp 3.5s linear";
+
+document.body.appendChild(t);
+
+/* remove after animation */
+setTimeout(()=>t.remove(),3500);
+}
+
+}
+
+
+
+</script>
+
+</body>
+</html>
